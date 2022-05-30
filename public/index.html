@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Recyclable?</title>
+    <meta property="og:title" content="Recyclable Waste Scanner">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Computer Vision Application classifying waste by recycling type.">
+
+    <!-- Compiled and minified CSS -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Materialze-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/css/styles.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Custom Style Sheet-->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async defer></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" async defer></script>
+
+    <!-- Common javascript (for all pages) -->
+    <script src="js/index.js" async defer></script>
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="left">
+                    <li>
+                        <a href="/" class="brand-logo"><i class="material-icons">camera</i>SugarFixed</a>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main><div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <div class="row center">
+                <div class="container ">
+                    <div class="camera" id="camera">
+                        <div>
+                            <canvas class="canvas" id="canvas"></canvas>
+                            <video class="video" id="video" poster="/images/camera.JPG" autoplay></video>
+
+                        </div>
+                        <div>
+                            <button id="openCamera" class="waves-effect button btn-large"><i id='openCameraIcon'
+                                    class="material-icons right">power_settings_new</i><span id='cameraBtnText'>Open Camera</span></button>
+                            <button id="takePhoto" class="waves-effect button btn-large"><i
+                                    id = "scanIcon" class="material-icons right">camera</i><span id="scanText">Scan Label</span></button>
+                        </div>
+                    </div>
+                    <h5 class="header col s12 light">Welcome to SugarFixed! <br><br> Take a photo of an ingredients
+                        list and SugarFixed will tell you
+                        what sugars are hiding in your food. Sign up or log in to get started.</h5>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="features container">
+            <div class="section">
+
+                <!--   Features Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center "><i class="fa fa-robot coloured"></i></h2>
+                            <h5 class="center">How does it work?</h5>
+
+                            <p class="light">SugarFixed utilises the latest AI character recognition algorithms to
+                                identify the sugars that are hiding in your food.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center "><i class="fa fa-utensils coloured"></i></h2>
+                            <h5 class="center">What's the point?</h5>
+                            <p class="light">Sugar goes by over 50 different names. It can be hard to remember them
+                                all if you're trying to eat healthy. Now you won't have to. </p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center"><i class="fa fa-paper-plane coloured"></i></h2>
+                            <h5 class="center">Contact Us</h5>
+                            <p class="light">We'd love to hear from you. Contact us with
+                                any feedback you might have!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="row modal-content">
+            <form class="col s12">
+                <p>Enter a name for your product and we'll add it to your database.</p>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Product name" id="productName" type="text" class="validate">
+                        <!-- <input placeholder="Product name" id="productName"> -->
+                        <label for="productName">Product Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <a class="waves-effect waves-light btn button" id="formSubmit">submit</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/landing.js" async defer></script>
+    </main>
+
+    <footer class="page-footer" id="myFooter">
+        <div class="footer-copyright">
+            <div class="container" id="copyright">
+                © 2022 SugarFixedCloud
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+
+</body>
+<!-- Tensorflow link and model location -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+
+
+</html>
